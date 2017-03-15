@@ -19,12 +19,12 @@ class report_slack2 (
   }
 
   ini_subsetting { 'puppet.conf/reports/slack':
-    ensure                => present,
-    path                  => "${slack_puppet_confdir}/puppet.conf",
-    section               => 'master',
-    setting               => 'reports',
-    subsetting            => 'slack',
-    subsetting_separator  => ',',
-    require               => File [ "${slack_puppet_confdir}/slack.yaml"],
+    ensure               => present,
+    path                 => "${slack_puppet_confdir}/puppet.conf",
+    section              => 'master',
+    setting              => 'reports',
+    subsetting           => 'slack',
+    subsetting_separator => ',',
+    require              => File[ "${slack_puppet_confdir}/slack.yaml" ],
   }
 }
